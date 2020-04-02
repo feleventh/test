@@ -6,25 +6,29 @@
   <title>Document</title>
 </head>
 <script>
-  document.cookie = "name=jack;domain=xiangyouzou.xyz;"
+  document.cookie = "name=jack;"
 </script>
 <body>
   <h1>测试cookie是否丢失</h1>
   <!-- <iframe src="http://www.xiangyouzou.xyz" frameborder="0"></iframe> -->
-  <form method="get" action="http://test.xiangyouzou.xyz/main.html">
+  <form method="get" action="https://www.baidu.com">
     <h3>get请求</h1>
     <input type="text" name="name" value="zhangsan">
     <button type="submit">确定</button>
   </form>
-  <a href="http://test.xiangyouzou.xyz/main.html">a链接</a>
-  <form method="post" action="http://test.xiangyouzou.xyz/main.html">
+  <a href="https://www.baidu.com">a链接</a>
+  <form method="post" action="http://www.baidu.com">
     <h3>post请求</h1>
     <input type="text" name="name" value="lisi">
     <button type="submit">确定</button>
   </form>
   <p id="cookie"></p>
+  <button id="changeCookie">cookie添加samesite和secure属性</button>
   <script>
     document.querySelector('#cookie').innerText = document.cookie
+    document.querySelector('#changeCookie').addEventListener('click', function(){
+      document.cookie = "name=jack;SameSite=None;Secure=true;"
+    })
   </script>
 </body>
 </html>
