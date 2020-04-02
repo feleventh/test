@@ -6,7 +6,7 @@
   <title>Document</title>
 </head>
 <script>
-  document.cookie = "name=jack;domain=baidu.com;"
+  document.cookie = "name=jack;domain=.baidu.com;"
 </script>
 <body>
   <h1>测试cookie是否丢失</h1>
@@ -27,7 +27,7 @@
   <script>
     document.querySelector('#cookie').innerText = document.cookie
     document.querySelector('#changeCookie').addEventListener('click', function(){
-      document.cookie = "name=lisi;domain=baidu.com;SameSite=None;Secure=true;"
+      document.cookie = "name=lisi;domain=.baidu.com;SameSite=None;Secure=true;"
     })
   </script>
 </body>
