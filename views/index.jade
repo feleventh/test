@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  h3 '链接'
+  a(href="/test")
+  h3 'get表单'
+  form(action="/test", method="get")
+    input(type="text", name="name", value="zhangsan")
+    button(type="submit") submit
+  h3 'post表单'
+  form(action="test", method="post")
+    input(type="text", name="name", value="lisi")
+    button(type="submit") submit
+  iframe(src="test", frameborder="0")
+  script(src="/javascripts/index.js")
