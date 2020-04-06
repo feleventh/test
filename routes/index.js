@@ -8,8 +8,15 @@ router.get('/', function(req, res, next) {
 });
 router.all('/test', function(req, res, next) {
   res.cookie('name', 'zhangsan', {
-    sameSite: "none",
+    SameSite: "none",
     secure: true,
+    domain: '.xiangyouzou.xyz'
+  })
+  res.render('test', { title: 'cookie测试,使用cookie方法' });
+});
+router.all('/test1', function(req, res, next) {
+  res.cookie('weather', 'sunny', {
+    domain: '.xiangyouzou.xyz'
   })
   res.render('test', { title: 'cookie测试,使用cookie方法' });
 });
