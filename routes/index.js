@@ -3,6 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+  res.cookie('name', 'zhangsan')
   res.setHeader('Set-Cookie', 'city=shenzhen;domain=test.xiangyouzou.xyz;SameSite=none;secure=true')
   res.render('index', { title: '测试cookie，使用setHead' });
 });
@@ -12,7 +13,6 @@ router.post('/', function(req, res, next) {
 });
 router.get('/test', function(req, res, next) {
   res.cookie('name', 'zhangsan', {
-    sameSite: 'none',
     secure: true,
     domain: 'test.xiangyouzou.xyz'
   })
