@@ -3,8 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.cookie('name', 'zhangsan')
-  res.setHeader('Set-Cookie', 'city=shenzhen;domain=test.xiangyouzou.xyz;SameSite=none;secure=true')
+  res.setHeader('Set-Cookie', 'city=shenzhen;domain=test.xiangyouzou.xyz;SameSite=none;secure=true;')
   res.render('index', { title: '测试cookie，使用setHead' });
 });
 router.post('/', function(req, res, next) {
@@ -12,10 +11,7 @@ router.post('/', function(req, res, next) {
   res.json({name: 'lisi', method: 'post'})
 });
 router.get('/test', function(req, res, next) {
-  res.cookie('name', 'zhangsan', {
-    secure: true,
-    domain: 'test.xiangyouzou.xyz'
-  })
+  res.cookie('name', 'zhangsan')
   res.render('test', { title: 'cookie测试,使用cookie方法' });
 });
 router.post('/test', function(req, res, next) {
